@@ -31,13 +31,13 @@ namespace Currículo.Classes
                 }
                 else
                 {
-                    MessageBox.Show("Nome deve conter mais de 3 caracteres.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Nome deve conter mais de 3 caracteres.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Nome é obrigatório.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nome é obrigatório.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -54,19 +54,19 @@ namespace Currículo.Classes
                     }
                     else
                     {
-                        MessageBox.Show("Email inválido.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Email inválido.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Email inválido.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Email inválido.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Email é obrigatório.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Email é obrigatório.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -81,13 +81,13 @@ namespace Currículo.Classes
                 }
                 else
                 {
-                    MessageBox.Show("Telefone deve conter 11 números.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Telefone deve conter 11 números.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Telefone é obrigatório.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Telefone é obrigatório.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -102,13 +102,13 @@ namespace Currículo.Classes
                 }
                 else
                 {
-                    MessageBox.Show("CEP deve conter 8 números.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("CEP deve conter 8 números.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("CEP é obrigatório.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("CEP é obrigatório.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -123,13 +123,13 @@ namespace Currículo.Classes
                 }
                 else
                 {
-                    MessageBox.Show("Logradouro deve conter até 100 caracteres.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Logradouro deve conter até 100 caracteres.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Logradouro é obrigatório.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Logradouro é obrigatório.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -146,19 +146,19 @@ namespace Currículo.Classes
                     }
                     else
                     {
-                        MessageBox.Show("Número deve conter até 10 números.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Número deve conter até 10 números.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Número só deve conter números.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Número só deve conter números.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Número é obrigatório.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Número é obrigatório.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -173,13 +173,13 @@ namespace Currículo.Classes
                 }
                 else
                 {
-                    MessageBox.Show("Bairro deve conter até 80 caracteres.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Bairro deve conter até 80 caracteres.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Bairro é obrigatório.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bairro é obrigatório.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -194,13 +194,13 @@ namespace Currículo.Classes
                 }
                 else
                 {
-                    MessageBox.Show("Cidade deve conter até 80 caracteres.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Cidade deve conter até 80 caracteres.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Cidade é obrigatório.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cidade é obrigatório.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -215,13 +215,13 @@ namespace Currículo.Classes
                 }
                 else
                 {
-                    MessageBox.Show("UF deve conter 2 caracteres.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("UF deve conter 2 caracteres.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("UF é obrigatório.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("UF é obrigatório.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -240,19 +240,19 @@ namespace Currículo.Classes
                         }
                         else
                         {
-                            MessageBox.Show("URL incompleta. Falta '.com' ou '.com.br'.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("URL incompleta. Falta '.com' ou '.com.br'.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return false;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("URL incompleta. Falta 'https://' ou 'http://'.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("URL incompleta. Falta 'https://' ou 'http://'.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Digite a URL do site/blog.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Digite a URL do site/blog.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
@@ -262,7 +262,7 @@ namespace Currículo.Classes
             }
             else
             {
-                MessageBox.Show("Possui site ou blog é obrigatório.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Possui site ou blog é obrigatório.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -273,7 +273,7 @@ namespace Currículo.Classes
             {
                 return true;
             }
-            MessageBox.Show("São necessárias pelo menos 3 qualidades.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("São necessárias pelo menos 3 qualidades.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
 
@@ -283,7 +283,7 @@ namespace Currículo.Classes
             {
                 return true;
             }
-            MessageBox.Show("É necessário pelo menos 1 curso.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("É necessário pelo menos 1 curso.", "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
     }
