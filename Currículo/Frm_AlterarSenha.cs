@@ -33,7 +33,7 @@ namespace Currículo
             {
                 Lbl_DigiteSenha.Text = "";
             }
-            if (Txt_Confirmar.Text.Trim() == "")
+            if (Txt_Confirmar.Text.Trim() == "" && Txt_Senha.Text.Trim() != "")
             {
                 Lbl_DigiteConfirmar.Text = "Confirme sua senha";
             }

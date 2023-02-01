@@ -61,7 +61,6 @@ namespace Currículo.Classes
                         }
                     }
                 }
-                MessageBox.Show("Usuário ou senha incorretos.", "Currículo");
                 return false;
             }
             catch (Exception ex)
@@ -76,7 +75,7 @@ namespace Currículo.Classes
             try
             {
                 var arquivo = File.ReadAllText(diretorio);
-                var linha = arquivo.IndexOf($"{usuario};{senhaAntiga}");
+                var linha = arquivo.IndexOf($"\n{usuario};{senhaAntiga}");
 
                 arquivo = arquivo.Remove(linha, usuario.Length + senhaAntiga.Length + 2);
                 arquivo += $"\n{usuario};{senhaNova}";

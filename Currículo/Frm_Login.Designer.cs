@@ -60,7 +60,7 @@
             this.Lbl_Usuario.Name = "Lbl_Usuario";
             this.Lbl_Usuario.Size = new System.Drawing.Size(67, 18);
             this.Lbl_Usuario.TabIndex = 2;
-            this.Lbl_Usuario.Text = "Usuario:";
+            this.Lbl_Usuario.Text = "Usuário:";
             // 
             // Lbl_Senha
             // 

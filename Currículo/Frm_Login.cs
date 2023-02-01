@@ -61,6 +61,10 @@ namespace Currículo
                     F.ShowDialog();
                     Application.Exit();
                 }
+                else
+                {
+                    Lbl_DigiteSenha.Text = "Usuário ou senha incorretos";
+                }
             }
         }
 
