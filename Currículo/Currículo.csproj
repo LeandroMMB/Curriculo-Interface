@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Cls_Cep.cs" />
+    <Compile Include="Classes\Cls_Criptografia.cs" />
     <Compile Include="Classes\Cls_Curriculo.cs" />
     <Compile Include="Classes\Cls_Fichario.cs" />
     <Compile Include="Classes\Cls_LoginCadastroSenha.cs" />

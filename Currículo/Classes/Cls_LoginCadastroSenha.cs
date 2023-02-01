@@ -26,7 +26,7 @@ namespace Currículo.Classes
                     }
                 }
 
-                File.AppendAllText(diretorio, $"{usuario};{senha}\n");
+                File.AppendAllText(diretorio, $"\n{usuario};{senha}");
 
                 MessageBox.Show("Conta salva com sucesso.", "Currículo");
                 return true;
@@ -79,7 +79,7 @@ namespace Currículo.Classes
                 var linha = arquivo.IndexOf($"{usuario};{senhaAntiga}");
 
                 arquivo = arquivo.Remove(linha, usuario.Length + senhaAntiga.Length + 2);
-                arquivo += $"{usuario};{senhaNova}\n";
+                arquivo += $"\n{usuario};{senhaNova}";
 
                 File.WriteAllText(diretorio, arquivo);
                 MessageBox.Show("Senha alterada com sucesso.", "Currículo");
