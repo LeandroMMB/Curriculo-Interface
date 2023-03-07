@@ -22,10 +22,10 @@ namespace Currículo.Classes
                 using (var tripleDES = new TripleDESCryptoServiceProvider() { Key = key, Mode = CipherMode.CBC, Padding = PaddingMode.PKCS7, IV = iv })
                 {
                     ICryptoTransform transform = tripleDES.CreateEncryptor();
-                    byte[] finalBlock = transform.TransformFinalBlock(data, 0, data.Length);
-                    byte[] results = new byte[iv.Length + finalBlock.Length];
+                    byte[] cipherText = transform.TransformFinalBlock(data, 0, data.Length);
+                    byte[] results = new byte[iv.Length + cipherText.Length];
                     Array.Copy(iv, results, iv.Length);
-                    Array.Copy(finalBlock, 0, results, iv.Length, finalBlock.Length);
+                    Array.Copy(cipherText, 0, results, iv.Length, cipherText.Length);
 
                     return Convert.ToBase64String(results, 0, results.Length);
                 }
@@ -37,7 +37,6 @@ namespace Currículo.Classes
             byte[] data = Convert.FromBase64String(texto);
             byte[] iv = new byte[8];
             byte[] cipherText = new byte[data.Length - iv.Length];
-
             
             Array.Copy(data, iv, iv.Length);
             Array.Copy(data, iv.Length, cipherText, 0, cipherText.Length);
