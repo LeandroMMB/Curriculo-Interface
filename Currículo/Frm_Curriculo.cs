@@ -35,14 +35,6 @@ namespace Currículo
                 && Cls_Validacoes.ValidarBlog(Txt_Url.Text, Cmb_Site.Text) && Cls_Validacoes.ValidarQualificacoes(Txt_Qualidade1.Text, Txt_Qualidade2.Text, Txt_Qualidade3.Text)
                 && Cls_Validacoes.ValidarCursos(Txt_Curso1.Text))
             {
-                var random = new Random();
-                bool idVerificado;
-                do
-                {
-                    idGerado = random.Next(999999).ToString();
-                    idVerificado = Cls_Validacoes.ValidarId(idGerado, diretorioJson);
-                } while (!idVerificado);
-
                 #region "Colocar as informações numa string"
                 string arquivo = $"Nome: {Txt_Nome.Text}\n" +
                                  $"Data de Nascimento: {Msk_DataNascimento.Text}\n" +
@@ -94,6 +86,14 @@ namespace Currículo
                 }
                 else
                 {
+                    var random = new Random();
+                    bool idVerificado;
+                    do
+                    {
+                        idGerado = random.Next(999999).ToString();
+                        idVerificado = Cls_Validacoes.ValidarId(idGerado, diretorioJson);
+                    } while (!idVerificado);
+
                     C.Id = idGerado;
                 }
 
