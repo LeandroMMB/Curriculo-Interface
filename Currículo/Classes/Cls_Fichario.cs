@@ -112,19 +112,19 @@ namespace Currículo.Classes
             status = true;
             try
             {
-                    if (File.Exists($@"{diretorioJson}\{id} - Currículo.json") && File.Exists($@"{diretorioTxt}\{id} - Currículo.txt"))
-                    {
-                        File.Delete($@"{diretorioJson}\{id} - Currículo.json");
-                        File.Delete($@"{diretorioTxt}\{id} - Currículo.txt");
+                if (File.Exists($@"{diretorioJson}\{id} - Currículo.json") && File.Exists($@"{diretorioTxt}\{id} - Currículo.txt"))
+                {
+                    File.Delete($@"{diretorioJson}\{id} - Currículo.json");
+                    File.Delete($@"{diretorioTxt}\{id} - Currículo.txt");
 
-                        mensagem = "Exclusão executada com sucesso.";
-                    }
-                    else
-                    {
-                        status = false;
-                        mensagem = $"Currículo de {id} não encontrado.";
-                    }
-                    return;
+                    mensagem = "Exclusão executada com sucesso.";
+                }
+                else
+                {
+                    status = false;
+                    mensagem = $"Currículo de {id} não encontrado.";
+                }
+                return;
             }
             catch (Exception ex)
             {

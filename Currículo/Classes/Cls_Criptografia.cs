@@ -37,7 +37,7 @@ namespace Currículo.Classes
             byte[] data = Convert.FromBase64String(texto);
             byte[] iv = new byte[8];
             byte[] cipherText = new byte[data.Length - iv.Length];
-            
+
             Array.Copy(data, iv, iv.Length);
             Array.Copy(data, iv.Length, cipherText, 0, cipherText.Length);
 
