@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagens\forms.ico" />
+    <None Include="Imagens\icons8-arquivo-50.png" />
     <Content Include="Imagens\icons8-chave-2-16.png" />
     <None Include="Imagens\icons8-salvar-100.png" />
     <None Include="Imagens\icons8-excluir-100 %282%29.png" />

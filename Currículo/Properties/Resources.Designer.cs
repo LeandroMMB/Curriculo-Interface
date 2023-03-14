@@ -73,6 +73,16 @@ namespace Currículo.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_arquivo_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_arquivo_50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_chave_2_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8_chave_2_16", resourceCulture);

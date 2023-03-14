@@ -105,11 +105,6 @@ namespace Currículo
             }
         }
 
-        private void Tsb_Limpar_Click(object sender, EventArgs e)
-        {
-            LimparCurriculo();
-        }
-
         private void Tsb_Deletar_Click(object sender, EventArgs e)
         {
             if (idCurriculoSelecionado != "")
@@ -137,6 +132,23 @@ namespace Currículo
             else
             {
                 Txt_Url.Enabled = true;
+            }
+        }
+
+        private void Tsb_AlterarSenha_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var F = new Frm_AlterarSenha(Cls_UsuarioLogado.Usuario, Cls_UsuarioLogado.Senha);
+            F.ShowDialog();
+            Show();
+        }
+
+        private void Tsb_NovoCurriculo_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja criar um novo currículo?", "Currículo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                LimparCurriculo();
+                AtualizarGrid();
             }
         }
 
@@ -185,15 +197,6 @@ namespace Currículo
                 }
             }
         }
-
-        private void Tsb_AlterarSenha_Click(object sender, EventArgs e)
-        {
-            Hide();
-            var F = new Frm_AlterarSenha(Cls_UsuarioLogado.Usuario, Cls_UsuarioLogado.Senha);
-            F.ShowDialog();
-            Show();
-        }
-
         void AtualizarGrid()
         {
             var C = new Cls_Curriculo.Dados();

@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Curriculo));
             this.Lbl_TituloCurriculo = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.Tsb_NovoCurriculo = new System.Windows.Forms.ToolStripButton();
             this.Tsb_SalvarAlterar = new System.Windows.Forms.ToolStripButton();
-            this.Tsb_Limpar = new System.Windows.Forms.ToolStripButton();
             this.Tsb_Deletar = new System.Windows.Forms.ToolStripButton();
             this.Tsb_AlterarSenha = new System.Windows.Forms.ToolStripButton();
             this.Cmb_Uf = new System.Windows.Forms.ComboBox();
@@ -101,8 +101,8 @@
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Tsb_NovoCurriculo,
             this.Tsb_SalvarAlterar,
-            this.Tsb_Limpar,
             this.Tsb_Deletar,
             this.Tsb_AlterarSenha});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -110,6 +110,16 @@
             this.toolStrip1.Size = new System.Drawing.Size(1227, 25);
             this.toolStrip1.TabIndex = 26;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // Tsb_NovoCurriculo
+            // 
+            this.Tsb_NovoCurriculo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Tsb_NovoCurriculo.Image = ((System.Drawing.Image)(resources.GetObject("Tsb_NovoCurriculo.Image")));
+            this.Tsb_NovoCurriculo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Tsb_NovoCurriculo.Name = "Tsb_NovoCurriculo";
+            this.Tsb_NovoCurriculo.Size = new System.Drawing.Size(23, 22);
+            this.Tsb_NovoCurriculo.Text = "Criar um novo currículo";
+            this.Tsb_NovoCurriculo.Click += new System.EventHandler(this.Tsb_NovoCurriculo_Click);
             // 
             // Tsb_SalvarAlterar
             // 
@@ -120,16 +130,6 @@
             this.Tsb_SalvarAlterar.Size = new System.Drawing.Size(23, 22);
             this.Tsb_SalvarAlterar.Text = "Salvar ou alterar currículo";
             this.Tsb_SalvarAlterar.Click += new System.EventHandler(this.Tsb_SalvarAlterar_Click);
-            // 
-            // Tsb_Limpar
-            // 
-            this.Tsb_Limpar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Tsb_Limpar.Image = global::Currículo.Properties.Resources.icons8_excluir_100;
-            this.Tsb_Limpar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Tsb_Limpar.Name = "Tsb_Limpar";
-            this.Tsb_Limpar.Size = new System.Drawing.Size(23, 22);
-            this.Tsb_Limpar.Text = "Limpar cadastro de currículo";
-            this.Tsb_Limpar.Click += new System.EventHandler(this.Tsb_Limpar_Click);
             // 
             // Tsb_Deletar
             // 
@@ -672,7 +672,6 @@
         private System.Windows.Forms.Label Lbl_TituloCurriculo;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton Tsb_Deletar;
-        private System.Windows.Forms.ToolStripButton Tsb_Limpar;
         private System.Windows.Forms.ComboBox Cmb_Uf;
         private System.Windows.Forms.Label Lbl_Uf;
         private System.Windows.Forms.Label Lbl_Cidade;
@@ -722,6 +721,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.ToolStripButton Tsb_SalvarAlterar;
         private System.Windows.Forms.ToolStripButton Tsb_AlterarSenha;
+        private System.Windows.Forms.ToolStripButton Tsb_NovoCurriculo;
     }
 }
 

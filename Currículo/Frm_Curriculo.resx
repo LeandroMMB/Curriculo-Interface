@@ -120,6 +120,16 @@
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Tsb_NovoCurriculo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC3SURBVGhD7dZBCsJAEETRnELE+x9JlJxGp8GCLLJJrOoY
+        +R8KsxrnERdOdLJewT3GrmMtrV3AuXnsNhZPX+iuHZOGPBef0Z9ZGnIZu3+eo28mDalaMB2QKo7pglRR
+        TCekimG6IVUEcwSksmOOglRWTBqyZfXfbHc6xN3yglu2u68PMAVEATEHRAExB0QBMQdEATEHRAExB0QB
+        MQdEATEHRAExB0QBMQdE/R3kV7a7tcOOHJ2kaXoDw5pTKCG0uHwAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="VerDados.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -135,7 +145,6 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>40</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAgYEAAAEAIABADgEAFgAAACgAAACBAAAAAgEAAAEAIAAAAAAABAQBAAAAAAAAAAAAAAAAAAAA
