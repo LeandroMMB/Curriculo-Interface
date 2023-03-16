@@ -59,7 +59,14 @@ namespace Currículo
                     Hide();
                     var F = new Frm_Curriculo();
                     F.ShowDialog();
-                    Application.Exit();
+
+                    Txt_Usuario.Text = "";
+                    Txt_Senha.Text = "";
+                    Lbl_DigiteUsuario.Text = "";
+                    Lbl_DigiteSenha.Text = "";
+                    Show();
+                    Txt_Usuario.Focus();
+                    Cb_MostrarSenha.Checked = false;
                 }
                 else
                 {

@@ -138,7 +138,7 @@ namespace Currículo
         private void Tsb_AlterarSenha_Click(object sender, EventArgs e)
         {
             Hide();
-            var F = new Frm_AlterarSenha(Cls_UsuarioLogado.Usuario, Cls_UsuarioLogado.Senha);
+            var F = new Frm_AlterarSenha(Cls_UsuarioLogado.Usuario, Cls_UsuarioLogado.Senha, Cls_UsuarioLogado.SenhaCripto);
             F.ShowDialog();
             Show();
         }

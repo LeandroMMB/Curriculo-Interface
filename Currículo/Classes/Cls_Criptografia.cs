@@ -9,7 +9,27 @@ namespace Currículo.Classes
 {
     public class Cls_Criptografia
     {
-        public string Encriptar(string texto, string senha)
+        private readonly static string hash = "o1Q2ib*Dj4VEIvWWu";
+
+        public static string EncriptarUsuario(string texto) //One-Way
+        {
+            byte[] data = Encoding.UTF8.GetBytes(texto);
+
+            using (var md5 = new MD5CryptoServiceProvider())
+            {
+                byte[] key = md5.ComputeHash(Encoding.UTF8.GetBytes(hash));
+
+                using (var tripleDES = new TripleDESCryptoServiceProvider() { Key = key, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+                {
+                    ICryptoTransform transform = tripleDES.CreateEncryptor();
+                    byte[] cipherText = transform.TransformFinalBlock(data, 0, data.Length);
+
+                    return Convert.ToBase64String(cipherText, 0, cipherText.Length);
+                }
+            }
+        }
+
+        public static string EncriptarSenha(string texto, string hash)
         {
             byte[] data = Encoding.UTF8.GetBytes(texto);
             byte[] iv = new byte[8];
@@ -17,9 +37,9 @@ namespace Currículo.Classes
 
             using (var md5 = new MD5CryptoServiceProvider())
             {
-                byte[] key = md5.ComputeHash(Encoding.UTF8.GetBytes(senha));
+                byte[] key = md5.ComputeHash(Encoding.UTF8.GetBytes(hash));
 
-                using (var tripleDES = new TripleDESCryptoServiceProvider() { Key = key, Mode = CipherMode.CBC, Padding = PaddingMode.PKCS7, IV = iv })
+                using (var tripleDES = new TripleDESCryptoServiceProvider() { Key = key, Mode = CipherMode.CBC, Padding = PaddingMode.PKCS7, IV = iv }) //CipherMode.CBC, IV = iv
                 {
                     ICryptoTransform transform = tripleDES.CreateEncryptor();
                     byte[] cipherText = transform.TransformFinalBlock(data, 0, data.Length);
@@ -32,7 +52,7 @@ namespace Currículo.Classes
             }
         }
 
-        public string Decriptar(string texto, string senha)
+        public static string DecriptarSenha(string texto, string hash)
         {
             byte[] data = Convert.FromBase64String(texto);
             byte[] iv = new byte[8];
@@ -41,17 +61,24 @@ namespace Currículo.Classes
             Array.Copy(data, iv, iv.Length);
             Array.Copy(data, iv.Length, cipherText, 0, cipherText.Length);
 
-            using (var md5 = new MD5CryptoServiceProvider())
+            try
             {
-                byte[] key = md5.ComputeHash(Encoding.UTF8.GetBytes(senha));
-
-                using (var tripleDES = new TripleDESCryptoServiceProvider() { Key = key, Mode = CipherMode.CBC, Padding = PaddingMode.PKCS7, IV = iv })
+                using (var md5 = new MD5CryptoServiceProvider())
                 {
-                    ICryptoTransform transform = tripleDES.CreateDecryptor();
-                    byte[] results = transform.TransformFinalBlock(cipherText, 0, cipherText.Length);
+                    byte[] key = md5.ComputeHash(Encoding.UTF8.GetBytes(hash));
 
-                    return Encoding.UTF8.GetString(results);
+                    using (var tripleDES = new TripleDESCryptoServiceProvider() { Key = key, Mode = CipherMode.CBC, Padding = PaddingMode.PKCS7, IV = iv }) //CipherMode.CBC, IV = iv
+                    {
+                        ICryptoTransform transform = tripleDES.CreateDecryptor();
+                        byte[] results = transform.TransformFinalBlock(cipherText, 0, cipherText.Length);
+
+                        return Encoding.UTF8.GetString(results);
+                    }
                 }
+            }
+            catch (CryptographicException)
+            {
+                return "false";
             }
         }
     }

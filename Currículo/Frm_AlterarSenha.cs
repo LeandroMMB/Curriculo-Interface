@@ -15,11 +15,13 @@ namespace Currículo
     {
         private readonly string usuario;
         private readonly string senha;
+        private readonly string senhaCripto;
 
-        public Frm_AlterarSenha(string Usuario, string Senha)
+        public Frm_AlterarSenha(string Usuario, string Senha, string SenhaCripto)
         {
             usuario = Usuario;
             senha = Senha;
+            senhaCripto = SenhaCripto;
             InitializeComponent();
         }
 
@@ -48,9 +50,8 @@ namespace Currículo
                 {
                     if (Txt_Senha.Text != senha)
                     {
-                        if (Cls_LoginCadastroSenha.AlterarSenha(usuario, senha, Txt_Senha.Text))
+                        if (Cls_LoginCadastroSenha.AlterarSenha(usuario, senha, senhaCripto, Txt_Senha.Text))
                         {
-                            new Cls_UsuarioLogado(usuario, Txt_Senha.Text);
                             Close();
                         }
                     }
