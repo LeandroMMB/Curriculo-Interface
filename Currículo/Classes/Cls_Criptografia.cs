@@ -9,7 +9,7 @@ namespace Currículo.Classes
 {
     public class Cls_Criptografia
     {
-        private readonly static string hash = "o1Q2ib*Dj4VEIvWWu";
+        readonly static string hash = "o1Q2ib*Dj4VEIvWWu";
 
         public static string EncriptarUsuario(string texto) //One-Way
         {

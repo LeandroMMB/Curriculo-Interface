@@ -138,7 +138,7 @@ namespace Currículo
         private void Tsb_AlterarSenha_Click(object sender, EventArgs e)
         {
             Hide();
-            var F = new Frm_AlterarSenha(Cls_UsuarioLogado.Usuario, Cls_UsuarioLogado.Senha, Cls_UsuarioLogado.SenhaCripto);
+            var F = new Frm_AlterarSenha(Cls_UsuarioLogado.Id, Cls_UsuarioLogado.Usuario, Cls_UsuarioLogado.Senha, Cls_UsuarioLogado.SenhaCripto);
             F.ShowDialog();
             Show();
         }
@@ -174,24 +174,27 @@ namespace Currículo
 
         private void Msk_Cep_Leave(object sender, EventArgs e)
         {
-            var vCep = Msk_Cep.Text.Replace("-", "");
+            var vCep = Msk_Cep.Text.Replace("-", "").Trim();
             if (vCep.Length == 8)
             {
                 var cepJson = Cls_Cep.GeraJSONCEP(vCep);
                 var CEP = Cls_Cep.DesSerializedClassUnit(cepJson);
-                if (CEP.Uf != null)
+                if (CEP != null)
                 {
-                    Txt_Logradouro.Text = CEP.Logradouro;
-                    Txt_Bairro.Text = CEP.Bairro;
-                    Txt_Cidade.Text = CEP.Localidade;
-
-                    for (int i = 0; i < Cmb_Uf.Items.Count; i++)
+                    if (CEP.Uf != null)
                     {
-                        var posicao = Cmb_Uf.Items[i].ToString().IndexOf(CEP.Uf);
-                        if (posicao == 0)
+                        Txt_Logradouro.Text = CEP.Logradouro;
+                        Txt_Bairro.Text = CEP.Bairro;
+                        Txt_Cidade.Text = CEP.Localidade;
+
+                        for (int i = 0; i < Cmb_Uf.Items.Count; i++)
                         {
-                            Cmb_Uf.SelectedIndex = i;
-                            return;
+                            var posicao = Cmb_Uf.Items[i].ToString().IndexOf(CEP.Uf);
+                            if (posicao == 0)
+                            {
+                                Cmb_Uf.SelectedIndex = i;
+                                return;
+                            }
                         }
                     }
                 }

@@ -8,12 +8,14 @@ namespace Currículo.Classes
 {
     public class Cls_UsuarioLogado
     {
+        public static string Id { get; set; }
         public static string Usuario { get; private set; }
         public static string Senha { get; private set; }
         public static string SenhaCripto { get; private set; }
 
-        public Cls_UsuarioLogado(string usuario, string senha, string senhaCripto)
+        public Cls_UsuarioLogado(string id, string usuario, string senha, string senhaCripto)
         {
+            Id = id;
             Usuario = usuario;
             Senha = senha;
             SenhaCripto = senhaCripto;

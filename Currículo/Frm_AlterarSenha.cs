@@ -13,12 +13,14 @@ namespace Currículo
 {
     public partial class Frm_AlterarSenha : Form
     {
+        private readonly string id;
         private readonly string usuario;
         private readonly string senha;
         private readonly string senhaCripto;
 
-        public Frm_AlterarSenha(string Usuario, string Senha, string SenhaCripto)
+        public Frm_AlterarSenha(string Id, string Usuario, string Senha, string SenhaCripto)
         {
+            id = Id;
             usuario = Usuario;
             senha = Senha;
             senhaCripto = SenhaCripto;
@@ -50,7 +52,7 @@ namespace Currículo
                 {
                     if (Txt_Senha.Text != senha)
                     {
-                        if (Cls_LoginCadastroSenha.AlterarSenha(usuario, senha, senhaCripto, Txt_Senha.Text))
+                        if (Cls_LoginCadastroSenha.AlterarSenha(id, usuario, senha, senhaCripto, Txt_Senha.Text))
                         {
                             Close();
                         }

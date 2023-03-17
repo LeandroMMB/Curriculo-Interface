@@ -20,17 +20,23 @@ namespace Currículo.Classes
             status = true;
             try
             {
-                if (!Directory.Exists(DiretorioTxt))
-                {
-                    Directory.CreateDirectory(DiretorioTxt);
-                }
-                diretorioTxt = DiretorioTxt;
+                var id = Cls_UsuarioLogado.Id;
+                var diretorioUsuarios = Cls_LoginCadastroSenha.diretorioUsuarios;
 
-                if (!Directory.Exists(DiretorioJson))
+                var diretorioTxtCompleto = $@"{diretorioUsuarios}\{id}\{DiretorioTxt}";
+                var diretorioJsonCompleto = $@"{diretorioUsuarios}\{id}\{DiretorioJson}";
+
+                if (!Directory.Exists(diretorioTxtCompleto))
                 {
-                    Directory.CreateDirectory(DiretorioJson);
+                    Directory.CreateDirectory(diretorioTxtCompleto);
                 }
-                diretorioJson = DiretorioJson;
+                diretorioTxt = diretorioTxtCompleto;
+
+                if (!Directory.Exists(diretorioJsonCompleto))
+                {
+                    Directory.CreateDirectory(diretorioJsonCompleto);
+                }
+                diretorioJson = diretorioJsonCompleto;
             }
             catch (Exception ex)
             {
@@ -44,6 +50,10 @@ namespace Currículo.Classes
             status = true;
             try
             {
+                var senha = Cls_UsuarioLogado.Senha;
+                curriculoTxt = Cls_Criptografia.EncriptarSenha(curriculoTxt, senha);
+                curriculoJson = Cls_Criptografia.EncriptarSenha(curriculoJson, senha);
+
                 if (idCurriculoSelecionado != "")
                 {
                     File.Delete($@"{diretorioTxt}\{idCurriculoSelecionado} - Currículo.txt");
@@ -75,6 +85,9 @@ namespace Currículo.Classes
             try
             {
                 var curriculo = File.ReadAllText($@"{diretorioJson}\{nome} - Currículo.json");
+                var senha = Cls_UsuarioLogado.Senha;
+
+                curriculo = Cls_Criptografia.DecriptarSenha(curriculo, senha);
                 return curriculo;
             }
             catch (Exception ex)
@@ -95,6 +108,10 @@ namespace Currículo.Classes
                 for (int i = 0; i < curriculosJson.Length; i++)
                 {
                     var conteudo = File.ReadAllText(curriculosJson[i]);
+
+                    var senha = Cls_UsuarioLogado.Senha;
+                    conteudo = Cls_Criptografia.DecriptarSenha(conteudo, senha);
+
                     lista.Add(conteudo);
                 }
                 return lista;
